@@ -1,0 +1,52 @@
+{
+  "revision_id": "215fce6e61464bc13dea0e4cc0deec9c2280a90e60d169149b9c54363a09ff1a",
+  "name": "elk_stack",
+  "run_list": [
+    "recipe[elk_stack::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "elk_stack": {
+      "version": "0.1.0",
+      "identifier": "de657505d3d7afe720f150a74ccfb44cd3206c44",
+      "dotted_decimal_identifier": "62598998113114031.65056940432510159.198242052631620",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/rasahoo123/elk_stack.git",
+        "revision": "1aad762e5aa940682735f26cff49fba43d109461",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "elk_stack",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "elk_stack (0.1.0)": [
+
+      ]
+    }
+  }
+}

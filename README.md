@@ -1,2 +1,4 @@
 # elk_stack
-ELK_STACK
+
+TODO: Enter the cookbook description here.
+

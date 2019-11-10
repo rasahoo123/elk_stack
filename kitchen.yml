@@ -1,0 +1,53 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: SRE_Access
+  security_group_ids: ["sg-48b8a734"]
+  subnet_id: subnet-db65f6be
+  region: us-east-1
+  availability_zone: a
+  instance_type: m4.large
+  associate_public_ip: true
+  tags:
+    Name: Test Kitchen ELK Server
+    Owner: <%= ENV["KITCHEN_USER"] || ENV["USER"] %>
+
+## The forwarded_port port feature lets you connect to ports on the VM guest via
+## localhost on the host.
+## see also: https://www.vagrantup.com/docs/networking/forwarded_ports.html
+
+#  network:
+#    - ["forwarded_port", {guest: 80, host: 8080}]
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+  install_strategy: once
+
+  ## product_name and product_version specifies a specific Chef product and version to install.
+  ## see the Chef documentation for more details: https://docs.chef.io/config_yml_kitchen.html
+  product_name: chef
+  product_version: 15
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: aws-RHEL-7.3
+    driver:
+      image_id: ami-00dc79254d0461090
+      tags:
+        Name: 'Chef test-kitchen ELK RHEL'
+        created-by: 'test-kitchen'
+    transport:
+      ssh_key: ~/.ssh/SRE_Access
+      username: ec2-user
+
+suites:
+  - name: default
+    run_list:
+      - recipe[elk_stack::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
