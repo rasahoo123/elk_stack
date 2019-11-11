@@ -1,3 +1,3 @@
-I, [2019-11-10T10:18:26.204707 #86868]  INFO -- default-aws-RHEL-73: -----> Destroying <default-aws-RHEL-73>...
-I, [2019-11-10T10:18:27.069940 #86868]  INFO -- default-aws-RHEL-73: EC2 instance <i-0c08ae4cbadf12d42> destroyed.
-I, [2019-11-10T10:18:27.071084 #86868]  INFO -- default-aws-RHEL-73: Finished destroying <default-aws-RHEL-73> (0m0.87s).
+I, [2019-11-10T18:49:05.646928 #88450]  INFO -- default-aws-RHEL-73: -----> Destroying <default-aws-RHEL-73>...
+I, [2019-11-10T18:49:06.300229 #88450]  INFO -- default-aws-RHEL-73: EC2 instance <i-08f238ce04b702299> destroyed.
+I, [2019-11-10T18:49:06.301446 #88450]  INFO -- default-aws-RHEL-73: Finished destroying <default-aws-RHEL-73> (0m0.65s).

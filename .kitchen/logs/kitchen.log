@@ -1,3 +1,3 @@
-I, [2019-11-10T10:18:23.907367 #86868]  INFO -- Kitchen: -----> Starting Kitchen (v2.3.3)
-I, [2019-11-10T10:18:26.204636 #86868]  INFO -- Kitchen: -----> Destroying <default-aws-RHEL-73>...
-I, [2019-11-10T10:18:27.072090 #86868]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.16s)
+I, [2019-11-10T18:49:02.717552 #88450]  INFO -- Kitchen: -----> Starting Kitchen (v2.3.3)
+I, [2019-11-10T18:49:05.646821 #88450]  INFO -- Kitchen: -----> Destroying <default-aws-RHEL-73>...
+I, [2019-11-10T18:49:06.302293 #88450]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.58s)

@@ -39,6 +39,17 @@ node['elk_stack']['repos'].each do |file_name|
             mode  0755
             action :create
         end
+    elsif node['elk_stack']['install_type'] == 'localserver'
+        installer = "#{node['elk_stack'][file_name]['package']}-#{node['elk_stack'][file_name]['version']}-x86_64.rpm"
+        remote_file "#{node['elk_stack'][file_name]['working_directory']}/#{installer}" do
+            source "#{node['elk_stack']['localserver']['filepath']}/#{installer}"
+            owner 'root'
+            group 'root'
+            mode  0755
+            action :create
+        end
+    else
+       Chef::Log.error("Invalid Installation Source: #{node['elk_stack']['install_type']}")
     end
 end
 
@@ -62,7 +73,7 @@ end
 node['elk_stack']['repos'].each do |file_name|
     if node['elk_stack']['install_type'] == 'yumrepository'
         package "#{file_name}-#{node['elk_stack'][file_name]['version']}-1"
-    elsif node['elk_stack']['install_type'] == 'artifactory'
+    elsif node['elk_stack']['install_type'] == 'artifactory' || node['elk_stack']['install_type'] == 'localserver'
         installer = "#{node['elk_stack'][file_name]['package']}-#{node['elk_stack'][file_name]['version']}-x86_64.rpm"
         bash "Install #{file_name}" do
             code <<-EOC

@@ -6,7 +6,7 @@ driver:
   subnet_id: subnet-db65f6be
   region: us-east-1
   availability_zone: a
-  instance_type: m4.large
+  instance_type: t2.large
   associate_public_ip: true
   tags:
     Name: Test Kitchen ELK Server
